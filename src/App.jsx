@@ -8,7 +8,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/e-plantShopping/">
       <Header />
       <Routes>
         <Route path="/" element={<LandingPage />} />
