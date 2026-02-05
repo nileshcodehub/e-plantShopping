@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import LandingPage from './pages/LandingPage';
-import ProductMenuList from './pages/ProductMenuList';
+import ProductList from './ProductList';
 import CartItem from './CartItem';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
@@ -15,7 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/products" element={<ProductMenuList />} />
+        <Route path="/products" element={<ProductList />} />
         <Route path="/cart" element={<CartItem onContinueShopping={() => navigate('/products')} />} />
       </Routes>
     </div>
