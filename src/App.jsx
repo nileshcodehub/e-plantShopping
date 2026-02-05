@@ -1,21 +1,24 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import LandingPage from './pages/LandingPage';
 import ProductMenuList from './pages/ProductMenuList';
-import CartPage from './pages/CartPage';
+import CartItem from './CartItem';
+import { useNavigate } from 'react-router-dom';
 import './App.css';
 
 function App() {
+  const navigate = useNavigate();
+
   return (
-    <Router basename="/e-plantShopping/">
+    <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/products" element={<ProductMenuList />} />
-        <Route path="/cart" element={<CartPage />} />
+        <Route path="/cart" element={<CartItem onContinueShopping={() => navigate('/products')} />} />
       </Routes>
-    </Router>
+    </div>
   );
 }
 
